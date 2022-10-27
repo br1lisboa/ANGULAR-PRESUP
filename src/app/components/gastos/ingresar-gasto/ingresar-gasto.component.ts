@@ -44,7 +44,7 @@ export class IngresarGastoComponent implements OnInit {
 
 
       // enviar el obj a los suscrip x subject
-      this._presupuestoService.agregarGasto(GASTO)
+      this._presupuestoService.agregarGasto(GASTO);
 
 
       // reset form
