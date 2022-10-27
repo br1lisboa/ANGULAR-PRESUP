@@ -9,14 +9,21 @@ import { Subscription } from "rxjs";
 })
 export class ListarGastoComponent implements OnInit, OnDestroy {
   subcription: Subscription;
+  presupuesto: number;
+  restante: number;
 
   constructor(private _presupuestoService: PresupuestoService) {
+    this.presupuesto = 0;
+    this.restante = 0;
+
     this.subcription = this._presupuestoService.getGastos().subscribe(data => {
       console.log(data)
     });
   };
 
   ngOnInit(): void {
+    this.presupuesto = this._presupuestoService.presupuesto
+    this.restante = this._presupuestoService.restante
   };
 
   ngOnDestroy(): void {
