@@ -1,14 +1,22 @@
 <h4 class="text-center">Igresar Gastos</h4>
 <hr>
 
+<div *ngIf="formIncorrecto" class="text-center">
+    <span class="badge bg-danger textError">
+        {{textIncorrect | uppercase}}
+    </span>
+</div>
+
 <div class="from-group mb-4">
     <label for="gasto">Gasto</label>
-    <input type="text" id="gasto" placeholder="Ej: comida" class="form-control form-control-lg">
+    <input type="text" id="gasto" [(ngModel)]="nombreGasto" placeholder="Ej: comida"
+        class="form-control form-control-lg">
 </div>
 
 <div class="from-group mb-4">
     <label for="cantidad">Cantidad</label>
-    <input type="number" id="cantidad" placeholder="Ingrese cantidad" class="form-control form-control-lg">
+    <input type="number" id="cantidad" [(ngModel)]="cantidad" placeholder="Ingrese cantidad"
+        class="form-control form-control-lg">
 </div>
 
-<button class="btn btn-secondary btn-lg btn-block mt-2">AGREGAR GASTO</button>
+<button class="btn btn-secondary btn-lg btn-block mt-2" (click)="agregarGasto()">AGREGAR GASTO</button>
