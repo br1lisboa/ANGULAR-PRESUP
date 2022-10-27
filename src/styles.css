@@ -13,3 +13,7 @@ body {
     color: whitesmoke;
     text-transform: uppercase;
 }
+
+.textError {
+    font-size: 1rem;
+}
